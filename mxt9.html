@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>小日子搜索</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+	<style>
+		*{margin:0;padding:0;}
+		a{text-decoration: none}
+		li{list-style: none}
+	</style>
+	<link rel="stylesheet" href="css/mxt9.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<script type="text/javascript" src="js/zepto.js"></script>
+	<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js"></script>
+	<script type="text/javascript" src="js/swiper.animate1.0.2.min.js"></script>
+	<script type="text/javascript" src="js/mxt9.js"></script>
+</head>
+<body>
+	<div class="head">
+		<header>
+			<span class="back">&lt;</span>
+			<em><img src="images/love.png" alt=""></em>
+			<i><img src="images/fx1.png" alt=""></i>
+		</header>
+	</div>
+	<section>
+		<h2>做一个爱笑的女孩，像毛晓彤那样</h2>
+		<h3>#范儿</h3>
+		<p>4岁时进入天津市小天使乐团学习电子琴，多次参加天津电视台节目录制并担任领奏；8岁进入天津摇篮少儿艺术学校合唱团学习声乐，并多次参加天津电视台的节目录制并年开始学习钢琴；12岁时经天津音乐学院考级委员会审定达到钢琴五级水平；13岁考入北京专业院校学习国际标准舞（拉丁舞、摩登舞），并在在校期间多次获奖；17岁考入中央戏剧学院表演系，并获得学年度专业优秀奖学金。</p>
+		<div class="sec1">
+			<img src="images/9.jpg" alt="">
+		</div>
+	</section>
+</body>
+<script>
+	$('.back').on('touchend',function(){
+		history.go(-1)
+	})
+	function bodyScale(){
+		var devicewidth=document.documentElement.clientWidth;
+		var scale=devicewidth/750;
+		document.body.style.zoom=scale;
+	}
+	window.onload=window.onresize=function(){
+		bodyScale();
+		var mySwiper = new Swiper ('.swiper-container', { 
+			direction: 'vertical',
+			onInit: function(swiper){ 
+				swiperAnimateCache(swiper); 
+				swiperAnimate(swiper); 
+		 	}, 
+			onSlideChangeEnd: function(swiper){
+	 			swiperAnimate(swiper);
+		 	} 
+		})
+	}
+</script>
+</html>

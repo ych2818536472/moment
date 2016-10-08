@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="blank">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/classify.css">
+	<link rel="stylesheet" href="css/diy.css">
+	<link rel="stylesheet" href="iconfont1/iconfont.css">
+	<script src="js/zepto.js"></script>
+	<title>DIY</title>
+</head>
+<body>
+	<header class="classify_header diy_header">
+		<div><p class="blank"></p><i class="iconfont back">&#xe64e;</i></div>
+		<div></div>
+		<div class="diy_icon">
+			<img src="images/choice_icon1_1.png" alt="">
+			<img src="images/choice_icon2_2.png" alt="">
+			<p class="blank"></p>
+		</div>
+	</header>
+	<article class="diy_main">
+		<div class="diy_pic">
+			<img src="images/diy_pic1.jpg" alt="">
+			<div class="diy_art">
+				<h2>迎秋日 邂逅潮流布衣，享受当下秋天的美好。</h2>
+				<p class="col_y">#DIY手作</p>
+				<p>￥198</p>
+				<p style="text-align:left;">08月18日-10月31日 每周二，三，四，五，六， 日10:00-19:00</p>
+				<p>北京市海淀区中关村南大街2号楼数码银座906室</p>
+				<p>活动详情</p>
+				<p>伴着阵阵秋雨，秋来了。秋，一个舒适的季节。</p>
+			</div>
+		</div>
+		<div class="diy_pic">
+			<img src="images/diy_pic2.jpg" alt="">
+			<div class="diy_art">
+				<h2>迎秋日 邂逅潮流布衣，享受当下秋天的美好。</h2>
+				<p class="col_y">#DIY手作</p>
+				<p>￥198</p>
+				<p style="text-align:left;">08月18日-10月31日 每周二，三，四，五，六， 日10:00-19:00</p>
+				<p>北京市海淀区中关村南大街2号楼数码银座906室</p>
+				<p>活动详情</p>
+				<p>伴着阵阵秋雨，秋来了。秋，一个舒适的季节。</p>
+			</div>
+		</div>
+	</article>
+	<footer class="diy_footer">
+		<div class="diy_footer_left">咨询</div>
+		<div class="diy_footer_right">马上预定</div>
+	</footer>	
+</body>
+	<script>
+		$('.back').on('touchend',function(){
+			history.go(-1)
+		})
+		var scrollTop=(window.innerHeight > 0) ? window.innerHeight : screen.Height;
+		var $diy_main=$(".diy_main");
+		console.log(scrollTop);
+		$.get("diy.json",function(data){
+			console.log(data);
+			var htmls="";
+			for(var i=0;i<data.length;i++){
+				var data_arr=data[i];
+				//console.log(data_arr.src);
+				htmls+="<div class='diy_pic'><img src='"+data_arr.src+"' ></div>"+"<div class='diy_art'>"+"<h2>"+data_arr.a+"</h2>"+"<p class='col_y'>"+data_arr.b+"</p>"+"<p>"+data_arr.c+"</p>"+"<p>"+data_arr.d+"</p>"+"<p>"+data_arr.e+"</p>"+"<p>"+data_arr.f+"</p>"+"<p>"+data_arr.g+"</p>"+"</div>";
+
+				//console.log(htmls);
+				$diy_main.append(htmls);
+			}
+       	});
+		
+		function ajax(url, fnSucc, fnFail) {
+			var oAjax = null;
+			if (window.XMLHttpRequest) {
+				oAjax = new XMLHttpRequest();
+			} else {
+				oAjax = new ActiveXObject('Micsofot.XMLHTTP');
+			}
+			oAjax.open('GET', url, true)
+			oAjax.send()
+			oAjax.onreadystatechange = function() {
+				if (oAjax.readyState == 4) {
+					if (oAjax.status == 200) {
+						fnSucc(oAjax.responseText)
+					} else {
+						if (fnFail) {
+							fnFail()
+						}
+					}
+				}
+			}
+		}		
+		
+	</script>
+
+</html>

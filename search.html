@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>小日子书屋</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+	<style>
+		*{margin:0;padding:0;}
+		a{text-decoration: none;color:#666;}
+		li{list-style: none;}
+	</style>
+	<link rel="stylesheet" href="css/search.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<script type="text/javascript" src="js/zepto.js"></script>
+	<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js"></script>
+	<script type="text/javascript" src="js/swiper.animate1.0.2.min.js"></script>
+	<script type="text/javascript" src="js/search.js"></script>
+</head>
+<body>
+	<header><span><a href="classify.html">&lt</a></span><b>书屋</b></header>
+	<section>
+		<div class="main-t">
+			<a href="liwanshuwu.html?id=1101">
+			<div class="main-tt">
+				<img src="images/3.jpg" alt="">
+			</div>
+			<div class="main-tb">
+				<h2>
+					阅读的彼岸，总有无尽的喜悦
+				</h2>
+				<h3>
+					书屋·<a href="">「彼岸书店」</a>
+				</h3>
+			</div>
+			</a>
+		</div>
+		<div class="main-t">
+		<a href="liwanshuwu.html?id=1102">
+			<div class="main-tt">
+				<img src="images/4.jpg" alt="">
+			</div>
+			<div class="main-tb">
+				<h2>
+					远离尘嚣，篱宛书屋
+				</h2>
+				<h3>
+					书屋·「篱宛书屋」
+				</h3>
+			</div>
+			</a>
+		</div>
+	</section>
+</body>
+<script>
+	function bodyScale(){
+		var devicewidth=document.documentElement.clientWidth;
+		var scale=devicewidth/750;
+		document.body.style.zoom=scale;
+	}
+	window.onload=window.onresize=function(){
+		bodyScale();
+		var mySwiper = new Swiper ('.swiper-container', { 
+			direction: 'vertical',
+			onInit: function(swiper){ 
+				swiperAnimateCache(swiper); 
+				swiperAnimate(swiper); 
+		 	}, 
+			onSlideChangeEnd: function(swiper){
+	 			swiperAnimate(swiper);
+		 	} 
+		})
+	}
+</script>
+</html>

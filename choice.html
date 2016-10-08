@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="blank">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/classify.css">
+	<link rel="stylesheet" href="css/gatest.css">
+	<link rel="stylesheet" href="css/choice.css">
+	<link rel="stylesheet" href="iconfont1/iconfont.css">
+	<!--<script src="js/iscroll-probe.js"></script>-->
+	<script src="js/zepto.js"></script>
+	<title>精选</title>
+</head>
+<body>
+	<header class="classify_header">
+		<div><p class="blank"></p><a href="index.html" style="color:#666"><i class="iconfont backs">&#xe64e;</i></a></div>
+		<div>附近</div>
+		<div></div>
+	</header>
+	<article class="gatestability_main wrapper" id="choice_main">
+		<figure>
+			<img src="images/choice1.jpg" alt="">
+			<figcaption>
+				<h2>迎秋日 邂逅潮流布衣，享受当下秋天的美好</h2>
+				<p><i class="iconfont" style="margin-right:5px;">&#xe810;</i>每周二，三，四，五，六，日10:00-19:00 | 手工DIY</p>
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="images/choice2.jpg" alt="">
+			<figcaption>
+				<h2>找回心灵的皈依—这是一家北欧精品艺术酒店</h2>
+				<p><i class="iconfont" style="margin-right:5px;">&#xe810;</i>旅舍   「鹿鸣艺术酒店」    2.1KM</p>
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="images/choice3.jpg" alt="">
+			<figcaption>
+				<h2>北京100家美而小的店铺</h2>
+				<p><i class="iconfont" style="margin-right:5px;">&#xe810;</i>旅舍   「鹿鸣艺术酒店」    2.1KM</p>
+			</figcaption>
+		</figure>
+	</article>
+	<script>
+		var $choice_main=$("#choice_main");
+		$.get("choice.json",function(data){
+			console.log(data);
+			var htmls="";
+			for(var i=0;i<data.length;i++){
+				var data_arr=data[i];
+				//console.log(data_arr.src);
+				htmls+="<figure><img src='"+data_arr.src+"' >"+"<figcaption><h2>"+data_arr.a+"</h2>"+"<p><i class='iconfont' style='margin-right:5px;'>&#xe810;</i>"+data_arr.c+"</p>"+"</figcaption>"+"</figure>";
+				console.log(htmls);
+				$choice_main.append(htmls);
+			}
+       	});
+		function ajax(url, fnSucc, fnFail) {
+			var oAjax = null;
+			if (window.XMLHttpRequest) {
+				oAjax = new XMLHttpRequest();
+			} else {
+				oAjax = new ActiveXObject('Micsofot.XMLHTTP');
+			}
+			oAjax.open('GET', url, true)
+			oAjax.send()
+			oAjax.onreadystatechange = function() {
+				if (oAjax.readyState == 4) {
+					if (oAjax.status == 200) {
+						fnSucc(oAjax.responseText)
+					} else {
+						if (fnFail) {
+							fnFail()
+						}
+					}
+				}
+			}
+		}		
+	</script>
+</body>
+</html>

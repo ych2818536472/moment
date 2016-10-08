@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="blank">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/classify.css">
+	<link rel="stylesheet" href="css/gatest.css">
+	<link rel="stylesheet" href="iconfont1/iconfont.css">
+	<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js"></script>
+	<script type="text/javascript" src="js/swiper.animate1.0.2.min.js"></script>
+	<script src="js/zepto.js"></script>
+	<title>安定门</title>
+</head>
+<body>
+	<header class="classify_header">
+		<div><p class="blank"></p><i class="iconfont backs">&#xe64e;</i></div>
+		<div>安定门</div>
+		<div></div>
+	</header>
+	<article class="gatestability_main">
+		<figure>
+			<img src="images/gatepic1.jpg" alt="">
+			<figcaption>
+				<h2>没有记录，就没有发生</h2>
+				<p>五道营 特色小店 vintage</p>
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="images/gatepic2.jpg" alt="">
+			<figcaption>
+				<h2>北京100家美而小的店铺</h2>
+				<p>花治 MIZU</p>
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="images/gatepic3.jpg" alt="">
+			<figcaption>
+				<h2>北京100家美而小的店铺</h2>
+				<p>花治 MIZU</p>
+			</figcaption>
+		</figure>
+	</article>
+	<script>
+		var $gatestability_main=$(".gatestability_main");
+		$(".backs").on("touchend",function(){
+			history.go(-1)
+		})
+		$.get("gatepic.json",function(data){
+			console.log(data);
+			var htmls="";
+			for(var i=0;i<data.length;i++){
+				var data_arr=data[i];
+				//console.log(data_arr.src);
+				htmls+="<figure><img src='"+data_arr.src+"' >"+"<figcaption><h2>"+data_arr.a+"</h2>"+"<p>"+data_arr.g+"</p>"+"</figcaption>"+"</figure>";
+				console.log(htmls);
+				$gatestability_main.append(htmls);
+			}
+       	});
+		function ajax(url, fnSucc, fnFail) {
+			var oAjax = null;
+			if (window.XMLHttpRequest) {
+				oAjax = new XMLHttpRequest();
+			} else {
+				oAjax = new ActiveXObject('Micsofot.XMLHTTP');
+			}
+			oAjax.open('GET', url, true)
+			oAjax.send()
+			oAjax.onreadystatechange = function() {
+				if (oAjax.readyState == 4) {
+					if (oAjax.status == 200) {
+						fnSucc(oAjax.responseText)
+					} else {
+						if (fnFail) {
+							fnFail()
+						}
+					}
+				}
+			}
+		}		
+	</script>
+</body>
+</html>

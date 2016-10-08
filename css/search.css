@@ -1,0 +1,36 @@
+input{resize:none;outline:none;background:#fff;}
+/*头部*/
+header{width:750px;height:90px;color:#65584a;}
+header span{font-size:30px;float:left;width:77px;height:90px;text-align:center;line-height:90px;font-size:35px;}
+header b{width:673px;height:90px;line-height:90px;text-align:center;font-size:35px;float:left;}
+/*section*/
+section{width:750px;height:542px;color:#65584a;}
+.main-tt{width:750px;height:419px;}
+.main-tt img{width:100%;height:100%;}
+.main-tb{width:720px;height:103px;padding:20px 0 0 30px;} 
+.main-tb h2{font-size:27px ;color:#65584a;margin-bottom:20px;}
+.main-tb h3{font-size:23px ;color:#a19180;}
+.main-tb h3 a{font-size:23px ;color:#a19180;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

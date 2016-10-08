@@ -1,0 +1,57 @@
+body,html{width:100%;height:100%;background:#fff;}
+input{resize:none;outline:none;background:#fff;}
+li{list-style: none}
+header{width:750px;height:87px;border-bottom:1px solid #9f9f9f;color:#65584a;font-size:32px;}
+header span{margin:27px 20px 0 30px;}
+header i img{width:30px;height:17px;margin-top:43px;}
+header span,header i,header b{display:block;float:left;}
+header b{margin:28px 0 0 191px;}
+/*******************************************搜索框****************/
+.search{width:720px;height:60px;padding:20px 0 0 30px;font-size: 22px}
+.search-l{width:525px;height:38px;border-radius:15px ;border:1px solid #666666;margin-right: 10px;background:url(../images/magnifier.png) no-repeat 20px 8px;padding:0 0 0 53px;}
+.search-r{width:98px;height:38px;border-radius:15px ;border:1px solid #666666;background:#fff;resize:none;outline:none;cursor: pointer;}
+/**************************************************书屋*********************/
+.study{width:739px;height:276px;padding-left:11px;}
+.study li{width:88px;height:118px;float:left;margin-left:74px;color:#333333;}
+.study li a{color:#333333;text-decoration: none;}
+.study li a dl dt{width:88px;height:89px;text-align:center;line-height:89px }
+.study li a dl dd{width:88px;text-align:center;}
+.icon{font-size:50px;width:60px;height:50px;}
+.study .iconfont{font-size: 50px}
+/**********************************瀑布流*********************************/
+.waterfall{width:750px;height:751px;border-bottom:1px solid #919191;overflow-y:auto;overflow-x:hidden}
+.waterfall-1{width:750px;height:328px;}
+.w1t{width:750px;height:20px;background:#fff0f0;}
+.w1b{position:relative;}
+.w1b img{width:690px;height:246px;padding:32px 30px 30px 30px;}
+.w1c{width:690px;height:40px;font-size:28px;background:rgba(0,0,0,0.5);position:absolute;top:130px;left:30px;color:#fff;text-align:center;line-height: 40px}
+/****************************底部*********************************************/
+/*.footer{width:750px;height:99px;}
+.footer ul li{float:left;margin:0 60px 0 68px;}
+.footer ul li dl dt img{width:44px;height:40px;}
+.footer ul li dl dt{width:48px;height:52px;padding-top:13px;}
+.footer ul li dl dd {font-size: 22px;}
+.footer ul li dl dd a{color:#65584a;}
+.tda{color:#ff8d8d;}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

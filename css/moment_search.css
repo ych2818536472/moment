@@ -1,0 +1,68 @@
+.moment_search_header{
+	position: relative;
+}
+.moment_search_main{
+	width: 100%;
+}
+.moment_search_main_search{
+	position: relative;
+	height: 50px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	border-bottom: 1px solid #ddd;
+}
+.moment_search_wrap{
+	width: 76%;
+	height: 29px;
+	border:1px solid #666;
+	margin-right: 10px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content:flex-start;
+	align-items:center;
+	border-radius:15px;
+}
+.moment_search_wrap i{
+	margin-left: 10px;
+}
+#moment_search{
+	margin-left:15px;
+	height: 16px;
+	outline:none;
+	border:0;
+}
+button{
+	outline:none;
+	border:0;
+	width: 13%;
+	height: 19px;
+	border:1px solid #666;
+	border-radius:10px;
+	background-color: #fff;
+	color:#73685c;
+	font-size: 12px;
+}
+#icon-arrow{
+	bottom:0;
+}
+.moment_search_main_history{
+	padding:0 15px;
+}
+.moment_search_main_history a{
+	color:#666;
+	margin-right: 20px;
+}
+.moment_search_main_history i{
+	margin-right: 10px;
+}
+.moment_search_main_history p{
+	padding-top: 10px;
+}

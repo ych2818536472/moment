@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>小日子发现</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+	<style>
+		*{margin:0;padding:0;}
+		a{text-decoration: none}
+		li{list-style: none}
+	</style>
+	<link rel="stylesheet" href="css/find9.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<script type="text/javascript" src="js/zepto.js"></script>
+	<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js"></script>
+	<script type="text/javascript" src="js/swiper.animate1.0.2.min.js"></script>
+	<script type="text/javascript" src="js/find9.js"></script>
+</head>
+<body>
+	<section>
+		<div class="sec2">
+			<div><img src="images/1.jpeg" alt=""></div>
+			<h2><a href="">逞强以成为我的强项，差别只在于，</a></h2>
+			<h3>
+				<span><a href="">我还能，撑多久......</a></span>
+				<em><a href="">#好文 #心灵</a></em>
+			</h3>
+		</div>
+		<div class="sec2">
+			<div><a href="mxt9.html"><img src="images/8.jpg" alt=""></a></div>
+			<h2>做一个爱笑的女孩</h2>
+			<h3>
+				<span><a href="mxt9.html">像 毛晓彤这样</a></span>
+				<em><a href="">#范儿 #人物</a></em>
+			</h3>
+		</div>
+	</section>
+</body>
+<script>
+	function bodyScale(){
+		var devicewidth=document.documentElement.clientWidth;
+		var scale=devicewidth/750;
+		document.body.style.zoom=scale;
+	}
+	window.onload=window.onresize=function(){
+		bodyScale();
+		var mySwiper = new Swiper ('.swiper-container', { 
+			direction: 'vertical',
+			onInit: function(swiper){ 
+				swiperAnimateCache(swiper); 
+				swiperAnimate(swiper); 
+		 	}, 
+			onSlideChangeEnd: function(swiper){
+	 			swiperAnimate(swiper);
+		 	} 
+		})
+	}
+</script>
+</html>

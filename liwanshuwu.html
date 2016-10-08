@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>篱莞书屋</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+	<style>
+		*{margin:0;padding:0;}
+		a{text-decoration: none}
+		li{list-style: none}
+	</style>
+	<link rel="stylesheet" href="css/lwsw.css">
+	<link rel="stylesheet" href="js/animate.css">
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<script type="text/javascript" src="js/zepto.js"></script>
+	<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js"></script>
+	<script type="text/javascript" src="js/swiper.animate1.0.2.min.js"></script>
+	<script type="text/javascript" src="js/lwsw.js"></script>
+</head>
+<body>
+	<!-- <div class="head">
+		<header>
+			<span>&lt;</span>
+			<em><img src="images/love.png" alt=""></em>
+			<i><img src="images/fx1.png" alt=""></i>
+		</header>
+	</div>
+	<section>
+		<h2>远离尘喧，篱莞书屋</h2>
+		<h3>#书屋</h3>
+		<h4>地址：北京市怀柔区 交界河村智慧谷</h4>
+		<h4>开放时间：周六.周日 上午8:30-1:30 下午：1:30-4:30</h4>
+		<h5>「篱宛书屋」</h5>
+		<p>远离北京的尘喧2个小时车程，在郊外雁栖小镇交界河村的智慧谷里，坐落了一座清新雅致的、由李晓东工作室设计的篱莞书屋</p>
+		<div class="seci">
+			<img src="images/7.jpg" alt="">
+		</div>
+	</section>
+	<footer>
+		<ul>
+			<li><a href="#"><img src="images/c1.png" alt=""></a></li>
+			<li><a href="#"><img src="images/c2.png" alt=""></a></li>
+			<li><a href="#"><img src="images/c3.png" alt=""></a></li>
+			<li><a href="#"><img src="images/c4.png" alt=""></a></li>
+			<li><a href="#"><img src="images/c5.png" alt=""></a></li>
+		</ul>
+		<p><a href="#">想去</a></p>
+	</footer> -->
+</body>
+<script>
+	function bodyScale(){
+		var devicewidth=document.documentElement.clientWidth;
+		var scale=devicewidth/750;
+		document.body.style.zoom=scale;
+	}
+	window.onload=window.onresize=function(){
+		bodyScale();
+		
+	}
+	var hehe=window.location.search.substring(4);
+	var sec=document.getElementsByTagName("body")[0];
+	$.get("erji.json",function(data){
+			var data=eval(data);
+			console.log(data.length)
+			for(var i=0;i<data.length;i++){
+				if(data[i].id==hehe){
+					index=i;
+				}
+			}			
+			var htmls='';
+			var obj=data[index];
+			console.log(obj)
+			htmls+="<div class='head'><header><span>"+obj.spa+"</span><em><img src='"+obj.img1+"'></em><i><img src='"+
+			obj.img2+"'></i></header></div><section><h2>"+obj.sec1+"</h2><h3>"+obj.sec2+"</h3><h4>"+
+			obj.sec3+"</h4><h4>"+obj.sec4+"</h4><h5>"+obj.sec5+"</h5><p>"+obj.sec6+"</p><div class='seci'><img src='"
+			+obj.seci+"'></div></section><footer><ul><li><a href='#'><img src='"+obj.foot1+"'></a></li><li><a href='#'><img src='"
+			+obj.foot2+"'></a></li><li><a href='#'><img src='"+obj.foot3+"'></a></li><li><a href='#'><img src='"
+			+obj.foot4+"'></a></li><li><a href='#'><img src='"+obj.foot5+"'></a></li></ul><p><a href='#'>"+obj.foot6+
+			"</a></p></footer>"
+//				console.log(obj.src);
+//				htmls+="<ul class='sec1'><li class='sec1-l'><img src='"+obj.src+"'/></li><li class='sec1-b'>"
+//				+obj.name+"</li><ul>"
+//				
+//			
+//			console.log(htmls);
+			sec.innerHTML+=htmls;
+			$(function(){
+				$("header span").on("touchend",function(){
+					history.go(-1);
+				})
+			})
+	
+		})
+		function ajax(url, fnSucc, fnFail) {
+				var oAjax = null;
+				if (window.XMLHttpRequest) {
+					oAjax = new XMLHttpRequest();
+				} else {
+					oAjax = new ActiveXObject('Micsofot.XMLHTTP');
+				}
+				oAjax.open('GET', url, true)
+				oAjax.send()
+				oAjax.onreadystatechange = function() {
+					if (oAjax.readyState == 4) {
+						if (oAjax.status == 200) {
+							fnSucc(oAjax.responseText)
+						} else {
+							if (fnFail) {
+								fnFail()
+							}
+						}
+					}
+				}
+			}
+</script>
+</html>

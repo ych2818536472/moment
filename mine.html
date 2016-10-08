@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>小日子搜索</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+	<style>
+		*{margin:0;padding:0;}
+		a{text-decoration: none}
+		li{list-style: none}
+	</style>
+	<link rel="stylesheet" href="css/mine.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="iconfont/iconfont.css">
+	<script type="text/javascript" src="js/zepto.js"></script>
+	<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js"></script>
+	<script type="text/javascript" src="js/swiper.animate1.0.2.min.js"></script>
+	<script type="text/javascript" src="js/mine.js"></script>
+</head>
+<body>
+	<header>
+		我的
+	</header>
+	<section>
+		<img src="images/10.png" alt="">
+	</section>
+	<div class="head">
+		<im-g src="images/11.jpg" alt="">
+	</div>
+	<div class="name">
+		<span>勤劳的双手</span><em><img src="images/pen.png" alt=""></em>
+	</div>
+	<div class="main">
+		<ul>
+			<li>小店</li>
+			<li>活动</li>
+			<li>演出</li>
+			<li>文章</li>
+		</ul>
+		<dl>
+			<dt><img src="images/ax.png" alt=""></dt>
+			<dd>这里什么都没有哦！</dd>
+			<dd><a href="">去喜欢吧</a></dd>
+		</dl>
+	</div>
+</body>
+<script>
+	function bodyScale(){
+		var devicewidth=document.documentElement.clientWidth;
+		var scale=devicewidth/750;
+		document.body.style.zoom=scale;
+	}
+	window.onload=window.onresize=function(){
+		bodyScale();
+		var mySwiper = new Swiper ('.swiper-container', { 
+			direction: 'vertical',
+			onInit: function(swiper){ 
+				swiperAnimateCache(swiper); 
+				swiperAnimate(swiper); 
+		 	}, 
+			onSlideChangeEnd: function(swiper){
+	 			swiperAnimate(swiper);
+		 	} 
+		})
+	}
+</script>
+</html>

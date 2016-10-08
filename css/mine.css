@@ -1,0 +1,35 @@
+/*header*/
+header{width:750px;height:85px;text-align:center;line-height:85px ;color: #000;font-size:34px;background:url(../images/sz.png) no-repeat 688px 29px; }
+section{width:750px;height:389px;}
+section img{width:100%;height:100%;}
+.head{width:190px;height:190px;border-radius: 95px;background:url(../images/11.jpg) no-repeat;background-size: cover;position:absolute;left:280px;top:379px;border:8px solid #f8e6e3;}
+.hea-d img{width:100%;height:100%;}
+/************section***********************/
+.name{width:470px;height:66px;padding-left:280px;padding-top:98px;border-bottom: 1px solid #999999}
+.name span{float:left;width:190px;height:66px;line-height: 66px;text-align:center;font-size:34px ;color:#333333;}
+.name em{float:left;}
+.name em img{width:38px;height:66px;}
+/*main区域*/
+.main{width:750px;height:556px;border-bottom:1px solid #919191;margin-top:10px;}
+.main ul{margin-left:24px;}
+.main ul li{width:100px;height:58px;float:left;text-align: center;line-height:58px ;font-size:32px ;color:#65584a;margin-left:61px;}
+.main ul li:hover{border-bottom:3px solid #ff8d8d;}
+.main dl{padding-top:88px;clear:both;}
+.main dl dt{width:750px;height:112px;}
+.main dl dt img{margin-left:319px;}
+.main dl dd{width:750px;height:102px;text-align: center;line-height:60px ;color:#cac2b9;font-size: 21px}
+.main dl dd a{width:202px;height:40px;border-radius:16px ;background:#fbc9c9;text-align: center;line-height:40px ;color:#393632;font-size: 28px;display: inline-block;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

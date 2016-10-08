@@ -1,0 +1,128 @@
+*{
+	margin: 0;
+ 	padding: 0;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	font-family: "Microsoft Yahei";
+	border: 0;
+}
+img{
+	width: 100%;
+	display: block;
+}
+a{
+	text-decoration: none;
+	color:#fff;
+}
+
+.classify_header{
+	width: 100%;
+	height: 45px;
+	position: fixed;
+	top:0;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	font-size:18px;
+	color:#65584a;
+	background-color: #fff;
+	border-bottom:1px solid #ddd;
+	
+}
+.classify_header div{
+	display: inline-flex;
+	flex:1;
+}
+.classify_header div:first-child{
+
+}
+.blank{
+	width: 15px;
+	height: 100%;
+}
+.classify_header div:nth-child(2){
+	justify-content:center;
+}
+/*.icon-arrow{
+	display: block;
+	width: 100%;
+	height: 1px;
+   	background:url(01_line.svg) repeat-x;
+   	position: absolute;
+   	bottom:2px;
+}*/
+.classify_main{
+	width: 100%;
+	position: absolute;
+	top:60px;
+	bottom: 0;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-flow:row wrap;
+	overflow-y:auto;
+	overflow-x:hidden;
+
+}
+.warp{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex:1;
+	height: 155%;
+	flex-flow:column wrap;
+	align-content:flex-start;
+}
+.classify_main .warp:first-child{
+	padding:0 15px;
+}
+.classify_main .warp:nth-child(2){
+	padding-right: 15px;
+}
+.pic{
+	width:100%;
+	height:100%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex:1;
+	margin-top: 15px;
+	position: relative;
+	background:url(../images/classify_pic1.jpg);
+}
+.warp .pic:first-child{
+	margin-top: 0;
+}
+.classify_picTit{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color:#fff;
+	font-size:18px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	z-index: 99;
+	background: rgba(0,0,0,.5);
+}
+.classify_picTit p{
+	display:inline-flex;
+}
